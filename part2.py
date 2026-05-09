@@ -3,12 +3,17 @@ from random import randint
 from math import hypot
 from socket import socket, AF_INET, SOCK_STREAM
 from threading import Thread
+from connection import Launcher
 
 sock = socket(AF_INET,SOCK_STREAM)
 sock.connect(("localhost",8080))
 sock.setblocking(False)
 
-
+app = Launcher()
+host = app.host
+nickname = app.username
+port = app.port
+print(host,port,nickname)
 
 init()
 
